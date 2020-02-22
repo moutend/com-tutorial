@@ -117,7 +117,7 @@ STDMETHODIMP CMyServer::Load(LPCOLESTR pszFileName, DWORD dwMode) {
     dwCreationDisposition = CREATE_ALWAYS;
   } else {
     dwCreationDisposition = OPEN_EXISTING;
-    mFile = CreateFile(pszFileName, dwDesiredAccess, 0, nullptr,
+    mFile = CreateFile(reinterpret_cast<LPCSTR>(pszFileName), dwDesiredAccess, 0, nullptr,
                        dwCreationDisposition, FILE_ATTRIBUTE_NORMAL, nullptr);
     dwError = GetLastError();
   }
