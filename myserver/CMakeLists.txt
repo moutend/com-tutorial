@@ -22,6 +22,6 @@ add_compile_options("/ZW")
 
 file(GLOB SOURCES "./src/*")
 add_library(myserver SHARED ${SOURCES})
-target_link_libarary(myserver shlwapi.lib)
+target_link_libraries(myserver shlwapi.lib)
 
 set_source_files_properties(src/myserver.def PROPERTIES HEADER_FILE_ONLY TRUE)
