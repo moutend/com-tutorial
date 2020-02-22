@@ -281,7 +281,8 @@ STDAPI DllUnregisterServer(void) {
   SHDeleteKey(HKEY_CLASSES_ROOT, szKey);
 
   wsprintf(szKey, TEXT("%s"), MyServerProgIDStr);
-  SHDeleteKey(HKEY_CLASSES_ROOT, szKey) return S_OK;
+  SHDeleteKey(HKEY_CLASSES_ROOT, szKey);
+  return S_OK;
 }
 
 BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved) {
