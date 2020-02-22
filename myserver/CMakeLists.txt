@@ -18,7 +18,7 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -AI\"C:/Program Files (x86)/Windows Kit
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -AI\"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/IDE/VC/vcpackages\"" )
 
 set(CMAKE_CXX_STANDARD 17)
-add_compile_options("/ZW")
+add_compile_options("/ZW /p:CharacterSet=Unicode")
 
 file(GLOB SOURCES "./src/*")
 add_library(myserver SHARED ${SOURCES})
