@@ -154,10 +154,6 @@ STDMETHODIMP CMyServer::Write(const void *pv, ULONG cb, ULONG *pcbWritten) {
 }
 
 // CMyServerFactory methods
-CMyServerFactory::CMyServerFactory() {}
-
-CMyServerFactory::~CMyServerFactory() {}
-
 STDMETHODIMP CMyServerFactory::QueryInterface(REFIID riid, void **ppvObject) {
   *ppvObject = nullptr;
 
