@@ -1,4 +1,3 @@
-#include <objidl.h>
 #include <shlwapi.h>
 #include <windows.h>
 

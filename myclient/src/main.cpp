@@ -1,4 +1,3 @@
-#include <objidl.h>
 #include <windows.h>
 
 const CLSID CLSID_MyServer = {0x112143a6,
