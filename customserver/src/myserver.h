@@ -1,4 +1,8 @@
-#include "myserver_h.h"
+#pragma once
+
+#include <windows.h>
+
+#include "generate.h"
 
 class CMyServer : public IFileControl {
 public:
