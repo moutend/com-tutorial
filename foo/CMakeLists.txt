@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.12)
+project(foo CXX)
+
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR OR EXISTS "${CMAKE_BINARY_DIR}/CMakeLists.txt")
+  message(FATAL_ERROR "In-source builds are not allowed.")
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_subdirectory(lib/bar)
+file(GLOB SOURCES "./src/*")
+add_executable(foo ${SOURCES})
+target_link_libraries(foo bar)
