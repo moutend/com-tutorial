@@ -128,7 +128,7 @@ STDMETHODIMP CMyServer::ReadFile(DWORD dwLength, BSTR *lp) {
   LPWSTR lpszW{};
 
   lpszA = (LPSTR)CoTaskMemAlloc(dwLength + 1);
-  ::ReadFile(m_hFile, lpszA, dwLength, &dwReadByte, nullptr);
+  ::ReadFile(mFile, lpszA, dwLength, &dwReadByte, nullptr);
   lpszA[dwReadByte] = '\0';
   dwReadByte++;
   lpszW = (LPWSTR)CoTaskMemAlloc(dwReadByte * sizeof(WCHAR));
@@ -147,7 +147,7 @@ STDMETHODIMP CMyServer::WriteFile(BSTR bstrData, DWORD dwLength) {
   dw = SysStringLen(bstrData) + 1;
   lpszA = (LPSTR)CoTaskMemAlloc(dw);
   WideCharToMultiByte(CP_ACP, 0, bstrData, -1, lpszA, dw, nullptr, nullptr);
-  ::WriteFile(m_hFile, lpszA, dwLength, &dwWriteByte, nullptr);
+  ::WriteFile(mFile, lpszA, dwLength, &dwWriteByte, nullptr);
 
   CoTaskMemFree(lpszA);
 
