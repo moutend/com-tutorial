@@ -24,7 +24,7 @@ file(GLOB SOURCES "./src/*")
 
 execute_process(
   COMMAND midl generate.idl
-  WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
+  WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/src"
 )
 add_library(customserver SHARED ${SOURCES})
 target_link_libraries(customserver shlwapi.lib)
