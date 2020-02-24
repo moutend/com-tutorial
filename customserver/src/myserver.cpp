@@ -1,6 +1,7 @@
 #include <shlwapi.h>
 #include <windows.h>
 
+#include "generate.h"
 #include "myserver.h"
 
 const TCHAR ProgIDStr[] = TEXT("Sample.MyServer2");
