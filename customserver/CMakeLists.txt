@@ -25,6 +25,6 @@ execute_process(
   WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/src"
 )
 file(GLOB SOURCES "./src/*")
-
+message("${SOURCES}")
 add_library(customserver SHARED ${SOURCES})
 target_link_libraries(customserver shlwapi.lib)
