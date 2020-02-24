@@ -22,7 +22,7 @@ add_compile_options("/ZW" "/p:CharacterSet=Unicode")
 
 file(GLOB SOURCES "./src/*")
 
-execute_command(
+execute_process(
   COMMAND midl generate.idl
   WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
 )
