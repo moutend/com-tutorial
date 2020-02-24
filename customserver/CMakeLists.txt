@@ -22,10 +22,9 @@ add_compile_options("/ZW" "/p:CharacterSet=Unicode")
 
 file(GLOB SOURCES "./src/*")
 
-add_custom_command(
-  OUTPUT generate.h generate_p.c generate_i.c generate.tlb dlldata.c
-  COMMAND midl "${CMAKE_CURRENT_LIST_DIR}/src/generate.idl"
-  MAIN_DEPENDENCY src/generate.idl
+execute_command(
+  COMMAND midl generate.idl
+  WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
 )
 add_library(customserver SHARED ${SOURCES})
 target_link_libraries(customserver shlwapi.lib)
