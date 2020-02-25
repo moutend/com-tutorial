@@ -1,4 +1,4 @@
-LIBRARY	"myserverdll"
+LIBRARY	"myserver"
 EXPORTS
 	DllCanUnloadNow PRIVATE
 	DllGetClassObject PRIVATE
