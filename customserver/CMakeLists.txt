@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(customserver CXX)
+project(customserver CXX C)
 
 set(CUSTOMSERVER_VERSION_MAJOR 0)
 set(CUSTOMSERVER_VERSION_MINOR 1)
@@ -17,7 +17,6 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -AI\"C:/Program Files (x86)/Windows Kits/10/UnionMetadata/10.0.17763.0\"" )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -AI\"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/IDE/VC/vcpackages\"" )
 
-list(APPEND CMAKE_CXX_SOURCE_FILE_EXTENSIONS "c")
 set(CMAKE_CXX_STANDARD 17)
 add_compile_options("/ZW" "/p:CharacterSet=Unicode")
 
