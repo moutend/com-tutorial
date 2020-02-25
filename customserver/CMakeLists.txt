@@ -24,8 +24,10 @@ execute_process(
   COMMAND midl generate.idl
   WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/src"
 )
+execute_process(
+  COMMAND rm dlldata.c
+  WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/src"
+)
 file(GLOB SOURCES "./src/*")
-get_filename_component(FULLPATH_IGNORE ${CMAKE_CURRENT_SOURCE_DIR}/src/dlldata.c ABSOLUTE)
-list(REMOVE_ITEM SOURCES "${FULLPATH_IGNORE}")
 add_library(customserver SHARED ${SOURCES})
 target_link_libraries(customserver shlwapi.lib)
