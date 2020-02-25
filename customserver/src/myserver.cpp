@@ -1,8 +1,11 @@
 #include <shlwapi.h>
 #include <windows.h>
 
-#include "generate.h"
 #include "myserver.h"
+
+extern "C" {
+#include "generate.h"
+}
 
 const TCHAR ProgIDStr[] = TEXT("Sample.MyServer2");
 LONG LockCount{};

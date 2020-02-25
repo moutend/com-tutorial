@@ -2,7 +2,9 @@
 
 #include <windows.h>
 
+extern "C" {
 #include "generate.h"
+}
 
 class CMyServer : public IFileControl {
 public:
