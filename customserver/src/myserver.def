@@ -1,4 +1,4 @@
-LIBRARY	"customserverdll"
+LIBRARY	"customserver"
 EXPORTS
 	DllCanUnloadNow PRIVATE
 	DllGetClassObject PRIVATE
