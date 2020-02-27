@@ -20,7 +20,12 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -AI\"C:/Program Files (x86)/Microsoft Vi
 set(CMAKE_CXX_STANDARD 17)
 add_compile_options("/ZW")
 
-configure_file("${CMAKE_SOURCE_DIR}/../customserver/src/generate.h" "${CMAKE_SOURCE_DIR}/src" COPYONLY)
+configure_file("${CMAKE_SOURCE_DIR}/../customserver/src/generate.idl" "${CMAKE_SOURCE_DIR}/src" COPYONLY)
+execute_process(
+  COMMAND midl generate.idl
+  WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/src"
+)
+file(REMOVE src/dlldata.c)
 file(GLOB SOURCES "./src/*")
 add_executable(customclient ${SOURCES})
 target_link_libraries(customclient shlwapi.lib)
